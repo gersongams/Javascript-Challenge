@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript Piano</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <h1 class="title">A weird piano with Javascript</h1>
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">C1</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">D1</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">E1</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">F1</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">G1</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">A1</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">B1</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="sounds/c1.wav"></audio>
+  <audio data-key="83" src="sounds/d1.wav"></audio>
+  <audio data-key="68" src="sounds/e1.wav"></audio>
+  <audio data-key="70" src="sounds/f1.wav"></audio>
+  <audio data-key="71" src="sounds/g1.wav"></audio>
+  <audio data-key="72" src="sounds/a1.wav"></audio>
+  <audio data-key="74" src="sounds/b1.wav"></audio>
+
+  <script>
+
+    function playSound(e) {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+      
+      // console.log(audio); // to play the music 
+      // console.log(key); // to change the style 
+
+      if(!audio) return; // stop the function from running all together
+      
+      audio.currentTime = 0; // rewind the start
+      audio.play();
+      key.classList.add('playing');
+
+    }
+
+    function removeTransition(e){
+      if(e.propertyName != 'transform') return; //skip if it's not a transition
+      //console.log(e.propertyName);
+      e.target.classList.remove('playing');
+    }
+
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    window.addEventListener('keydown', playSound);
+
+
+  </script>
+
+
+</body>
+
+</html>
