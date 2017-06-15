@@ -1,4 +1,4 @@
-# 04 - Array cardio day 1
+# 04 - Functional Javascript 1
 
 There's no preview on this beacause is on the console. 
 
