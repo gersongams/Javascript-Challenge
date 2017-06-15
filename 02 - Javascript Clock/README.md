@@ -34,7 +34,7 @@ Due to there is a glitch that occurs at every 0th second and our transition is s
 
 To bypass it, we remove the `transition` property at the specified degrees (where glitch occurs) via JavaScript.
 
-```
+```js
 if (secondsDegrees === 90) secondHand.style.transition = 'all 0s';
 else secondHand.style.transition = 'all 0.05s';
 
