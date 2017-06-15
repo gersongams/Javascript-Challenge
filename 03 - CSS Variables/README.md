@@ -13,7 +13,7 @@
 
 - CSS Variable declare syntax is `--`, just like `$` in SASS.
 
-```
+```js
 :root {
   --spacing: 10px;
 }
@@ -31,13 +31,13 @@ img {
 
 use `dataset` to deal with suffix `px` by adding `data-sizing: px` as an attribute on input element.
 
-```
+```html
 <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
 ```
 
 and the get the suffix by `dataset.sizing` via JS
 
-```
+```js
 const suffix = this.dataset.sizing || '';
 ```
 
@@ -47,7 +47,7 @@ and don't forget a condition with `|| ''` for `<input type=color>` which has no 
 
 `document.documentElement` is the root element in JS, so we can change the global CSS variables by JS is just `setProperty` to `style` like so:
 
-```
+```js
 document.documentElement.style.setProperty('--base', '#000');
 ```
 
