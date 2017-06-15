@@ -12,7 +12,7 @@ key event listener, audio play and toggle class.
 
 ### `data-key` has its own value on `<div>`s and `<audio>`s in HTML
 
-```
+```js
 const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
 const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
 ```
@@ -35,7 +35,7 @@ just add `audio.currentTime = 0;` before `audio.play();`
 
 - use `transitionend` event to remove `play` class. since we want to just remove `transform` property, so add a condition to skip others.
 
-```
+```js
 if(e.propertyName != 'transform') return;
 this.classList.remove('playing'); // `event.target.classList.remove('playing');`
 ```
@@ -46,7 +46,7 @@ this.classList.remove('playing'); // `event.target.classList.remove('playing');`
 
 - Arrow functions is ES6 syntax,
 
-```
+```js
 keys.forEach(key => key.addEventListener());
 ```
 
