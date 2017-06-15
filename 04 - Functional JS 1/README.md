@@ -10,7 +10,7 @@ There's no preview on this beacause is on the console.
 
 - here I learned a compact way to return a value instead of an if-statement returning `true`.
 
-```
+```js
 const fifteens = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
 ```
 
@@ -22,13 +22,13 @@ const fifteens = inventors.filter(inventor => (inventor.year >= 1500 && inventor
 
 - use `+` for concatenation in JS.
 
-```
+```js
 const fullNames = inventors.map(inventor => inventor.first + ' ' + inventor.last);
 ```
 
 above code in a ES6 syntax way:
 
-```
+```js
 const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
 ```
 
@@ -42,32 +42,32 @@ see, you don't event need to use `+` for concatenation!
 
 - `sort()` also accepts the specific function that defines the sort order.
 
-```
+```js
 const ordered = inventors.sort((a, b) => (a.year > b.year) ? 1 : -1);
 ```
 
 in this case, we can also write it more shortly for an **ascending order** just like:
 
-```
+```js
 const ordered = inventors.sort((a, b) => a.year - b.year);
 ```
 
 ### combination of filter and map
 
-```
+```js
 const de = links
            .map(link => link.textContent)
            .filter(streetName => streetName.includes('de'));
 ```
 - **[NOTICE]**: since `nodeList` is **NOT** an `array`, so we need to turn it into an array first for manipulate array methods.
 
-```
+```js
 const links = Array.from(document.querySelectorAll('.mw-category a'));
 ```
 
 above code can rewrite into ES6 syntax like:
 
-```
+```js
 const links = [...(document.querySelectorAll('.mw-category a'))];
 ```
 
@@ -75,7 +75,7 @@ const links = [...(document.querySelectorAll('.mw-category a'))];
 
 [`Array.prototype.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) method applies a function against an accumulator and each value of the array(from left-to-right) to reduce it to a single value.
 
-```
+```js
 const transportation = data.reduce(function(obj, item) {
   if(!obj[item]) {
     obj[item] = 0;
@@ -87,7 +87,7 @@ const transportation = data.reduce(function(obj, item) {
 
 `obj` is an element passed in to the `reduce()` function which will gather data over each iteration. and the result is just reduced the "numbers" collection into the "total" variables. which means every time you find yourself going from a list of values to one value (reducing), then you can use this method.
 
-```
+```js
 const sum = [0, 1, 2, 3, 4].reduce((a, b) => a + b, 0);
 
 console.log(sum);  // 10
