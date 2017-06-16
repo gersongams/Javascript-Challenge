@@ -2,8 +2,6 @@
 
 ![](images/06_00.png)
 
-view demo [here](https://amelieyeh.github.io/JS30/06-Ajax%20Type%20Ahead/index.html)
-
 - `change` & `keyup` events
 - Promise: `fetch()`, `then()`, `json()`
 - Array: `filter()`, `map()`, `push()`, `join()`
