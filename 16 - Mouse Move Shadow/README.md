@@ -45,8 +45,6 @@ now we `console.log()` out will see that `this` is `.hero` and `e.target` is `h1
 console.log(this, e.target);
 ```
 
-![](images/16_01.png)
-
 calculate offset positions
 
 ```js
@@ -59,10 +57,6 @@ const xWalk = Math.round((x / width * walk) - (walk / 2));
 const yWalk = Math.round((y / height * walk) - (walk / 2));
 console.log(xWalk, yWalk);
 ```
-
-log the `xWalk` and `yWalk` out to see the offsets after calculating
-
-![](images/16_02.png)
 
 and the CSS part, add the `textShadow` effect
 
