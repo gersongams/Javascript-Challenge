@@ -6,7 +6,7 @@
 
 don't forget to turn the nodeList into an array
 
-```
+```js
 const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
 ```
 
@@ -14,7 +14,7 @@ const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
 
 get the `dataset.time`
 
-```
+```js
 const seconds = timeNodes
   .map(timeNode => timeNode.dataset.time)
 
@@ -28,7 +28,7 @@ will be value of `data-time` attributes we set on html
 
 then we turn the values to seconds unit, and use `parseFloat` to turn it to an actual number of array
 
-```
+```js
 const seconds = timeNodes
   .map(timeNode => timeNode.dataset.time)
   .map(timeCode => {
@@ -47,7 +47,7 @@ The [`parseFloat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 finally, let's `reduce` the array to get the total seconds
 
-```
+```js
 const seconds = timeNodes
   .map(timeNode => timeNode.dataset.time)
   .map(timeCode => {
@@ -63,7 +63,7 @@ console.log(seconds);
 
 use the `seconds` (total seconds) variable to calculate the `hours` and `mins`, use `Math.floor` to remove decimal point
 
-```
+```js
 let secondsLeft = seconds;
 const hours = Math.floor(secondsLeft / 3600);
 secondsLeft = secondsLeft % 3600;
@@ -77,7 +77,7 @@ secondsLeft = secondsLeft % 60;
 
 I add a `<h1>` tag to place the result total time
 
-```
+```js
 const totalTime = document.querySelector('.total');
 
 totalTime.innerHTML = `<span>Total time <b>${hours}</b>:<b>${mins}</b>:<b>${secondsLeft}</span>`;
