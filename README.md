@@ -26,4 +26,3 @@ Content:
 20. Native Speech Recognition
 21. Geolocation based Speedometer and Compass
 22. Follow Along Links
-23. Speech Synthesis
